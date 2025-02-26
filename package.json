@@ -7,7 +7,11 @@
     "lint": "eslint . && stylelint 'src/**/*.css' && htmlhint 'src/**/*.html'",
     "lint:fix": "eslint --fix . && stylelint --fix 'src/**/*.css' && htmlhint 'src/**/*.html'",
     "format": "prettier --write 'src/**/*.{html,css,js}'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "webpack serve --open",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "keywords": [
     "weather",
@@ -38,5 +42,8 @@
       "htmlhint",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "vite": "^6.2.0"
   }
 }
