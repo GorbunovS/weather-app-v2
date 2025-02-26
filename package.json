@@ -1,0 +1,42 @@
+{
+  "name": "weather-forecast",
+  "version": "1.0.0",
+  "description": "Weather forecast page with semantic HTML markup",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . && stylelint 'src/**/*.css' && htmlhint 'src/**/*.html'",
+    "lint:fix": "eslint --fix . && stylelint --fix 'src/**/*.css' && htmlhint 'src/**/*.html'",
+    "format": "prettier --write 'src/**/*.{html,css,js}'",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "weather",
+    "forecast",
+    "semantic-html"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "htmlhint": "^1.1.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "htmlhint",
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+name: Add CodeSandbox link
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  codesandbox-comment:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Comment with CodeSandbox link
+      uses: unsplash/comment-on-pr@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        msg: |
+          Try this PR in CodeSandbox: https://githubbox.com/${{ github.repository }}/tree/${{ github.head_ref }}
